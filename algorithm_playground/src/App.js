@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {CardList} from './components/card-list/card-list';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  state = { 
+    homepage: ['Data Structures', 'Basic Algorithms', 'Machine Learning']
+  };
+  render() { 
+    return ( 
+      <div className='App'>
+        <center>
+          <h1>Algorithm Playground</h1>
+        </center>
+        <CardList homepage={this.state.homepage} />
+      </div>
+     );
+  }
 }
-
+ 
 export default App;
+
