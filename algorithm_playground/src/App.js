@@ -1,21 +1,22 @@
 import React from 'react';
+import {Switch, Route} from 'react-router-dom'
 import './App.css';
-import {CardList} from './components/card-list/card-list';
+import Homepage from './pages/homepage/homepage';
+import DataStruct from './pages/datastruct/datastruct'
+
+
 
 
 class App extends React.Component {
-  state = { 
-    homepage: ['Data Structures', 'Basic Algorithms', 'Machine Learning']
-  };
   render() { 
-    return ( 
-      <div className='App'>
-        <center>
-          <h1>Algorithm Playground</h1>
-        </center>
-        <CardList homepage={this.state.homepage} />
+    return (
+      <div>
+        <Switch>
+          <Route exact path='/' component={Homepage} />
+          <Route exact path='/ds' component={DataStruct} />
+        </Switch>
       </div>
-     );
+    );
   }
 }
  
